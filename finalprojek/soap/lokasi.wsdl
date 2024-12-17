@@ -1,0 +1,42 @@
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://localhost/finalprojek/soap/lokasi.wsdl"
+             targetNamespace="http://localhost/finalprojek/soap/lokasi.wsdl"
+             name="LokasiService">
+
+    <message name="getDistanceRequest">
+        <part name="start" type="xsd:string"/>
+        <part name="end" type="xsd:string"/>
+    </message>
+
+    <message name="getDistanceResponse">
+        <part name="distance" type="xsd:string"/>
+        <part name="routeDescription" type="xsd:string"/>
+    </message>
+
+    <portType name="LokasiPortType">
+        <operation name="getDistance">
+            <input message="tns:getDistanceRequest"/>
+            <output message="tns:getDistanceResponse"/>
+        </operation>
+    </portType>
+
+    <binding name="LokasiBinding" type="tns:LokasiPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="getDistance">
+            <soap:operation soapAction="http://localhost/finalprojek/soap/soapserver.php#getDistance"/>
+            <input>
+                <soap:body use="encoded" namespace="http://localhost/finalprojek/soap/soapserver.php" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </input>
+            <output>
+                <soap:body use="encoded" namespace="http://localhost/finalprojek/soap/soapserver.php" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </output>
+        </operation>
+    </binding>
+
+    <service name="LokasiService">
+        <port name="LokasiPort" binding="tns:LokasiBinding">
+            <soap:address location="http://localhost/finalprojek/soap/soapserver.php"/>
+        </port>
+    </service>
+</definitions>
