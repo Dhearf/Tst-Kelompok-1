@@ -8,10 +8,10 @@ $sql = "SELECT * FROM wisata";
 $result = $connection->query($sql);
 
 if ($result->num_rows > 0) {
-    $data = array(); // Inisialisasi array untuk menampung data
+    $data = array();
     
     while($row = $result->fetch_assoc()) {
-        $data[] = array( // Tambahkan data ke array
+        $data[] = array( 
             'type' => 'wisata',
             'Nama_Lokasi' => $row["Nama_Lokasi"],
             'Deskripsi_Lokasi' => $row["Deskripsi_Lokasi"],
@@ -22,7 +22,7 @@ if ($result->num_rows > 0) {
         );
     }
 
-    // Kirim seluruh array data sebagai JSON
+    
     echo json_encode($data);
 } else {
     echo json_encode(['message' => 'Tidak ada data wisata.']);
