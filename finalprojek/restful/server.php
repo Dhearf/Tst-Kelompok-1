@@ -1,10 +1,10 @@
 <?php
-require_once 'db.php'; // Sertakan file koneksi database
+require_once 'db.php';
 
 header('Content-Type: application/json');
 
 try {
-    // Jalankan query dengan koneksi yang ada
+    
     $query = "SELECT Koordinat_Latitude, Koordinat_Longitude, Nama_Lokasi, Deskripsi_Lokasi, Rating, Kategori, Waktu_Buka, Kontak_Lokasi FROM informasi";
     $result = $connection->query($query);
 
