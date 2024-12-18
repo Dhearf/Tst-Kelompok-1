@@ -1,5 +1,5 @@
 <?php 
-// Client-side untuk RESTful API
+
 $url = "http://localhost/finalprojek/restful/server.php";
 
 // Request GET
