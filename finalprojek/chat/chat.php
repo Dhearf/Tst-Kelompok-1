@@ -9,13 +9,13 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fff8dc; /* Warna latar kuning muda */
+            background-color: #fff8dc;
         }
         .chat-container {
             width: 100%;
             max-width: 600px;
             margin: 50px auto;
-            border: 1px solid #f1c40f; /* Kuning terang */
+            border: 1px solid #f1c40f;
             border-radius: 8px;
             background-color: #fff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -52,7 +52,7 @@
             padding: 10px;
             background-color: #f9e79f;
             border-radius: 0 0 8px 8px;
-            align-items: center; /* Vertically center the input and buttons */
+            align-items: center;
         }
         .chat-input input[type="text"] {
             flex: 1;
@@ -61,11 +61,11 @@
             border-radius: 4px;
             outline: none;
             font-size: 16px;
-            margin-right: 10px; /* Space between input and buttons */
+            margin-right: 10px;
         }
         .chat-input-buttons {
             display: flex;
-            gap: 10px; /* Space between buttons */
+            gap: 10px; 
         }
         .chat-input button {
             padding: 10px 15px;
